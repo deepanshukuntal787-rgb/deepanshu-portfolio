@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deepanshu Kuntal — Full Stack &amp; Distributed Systems Developer</title>
+  <meta name="description" content="Deepanshu Kuntal is a 3rd-year CS undergrad at MIT Bangalore specializing in distributed systems, Kubernetes-native architectures, and full-stack development." />
+  <meta name="theme-color" content="#05070a" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Deepanshu Kuntal — Full Stack &amp; Distributed Systems Developer" />
+  <meta property="og:description" content="Distributed systems, Kubernetes-native IDE, event-driven microservices, and AI incident intelligence." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Unbounded, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- Custom Follower Cursor -->
+  <div class="cursor" id="custom-cursor" aria-hidden="true">
+    <i></i>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="site">
+    <!-- Fixed Header -->
+    <header class="site-header page-shell">
+      <a class="wordmark" href="#top" aria-label="Deepanshu Kuntal home">
+        <span class="wordmark-mark">DK</span>
+        <span>deepanshu<span class="wordmark-dim">/systems</span></span>
+      </a>
+
+      <button class="mobile-menu-button" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#deepdive">Deep-Dive</a>
+        <a href="#systems">Topology</a>
+        <a href="#approach">Builds</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://linkedin.com/in/deepanshu-kuntal" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <button class="nav-contact" id="copy-email-btn" data-email="deepanshukuntal787@gmail.com">Copy email</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Section 1: Hero Cinema (Scroll-driven 3D Particle Showcase) -->
+      <section class="cinema" id="top" aria-label="Deepanshu Kuntal — introduction">
+        <div class="cinema-sticky">
+          <div class="cinema-canvas" id="hero-canvas-container" aria-hidden="true">
+            <canvas id="hero-particles-canvas"></canvas>
+          </div>
+          <div class="cinema-vignette" aria-hidden="true"></div>
+          <div class="cinema-bars" aria-hidden="true"></div>
+
+          <!-- Hidden accessible H1 -->
+          <h1 class="cinema-h1">
+            <span class="cinema-h1-name">Deepanshu<br />Kuntal</span>
+            <span class="cinema-h1-role">Full stack &amp; distributed systems developer</span>
+          </h1>
+
+          <!-- Initial Stage: Hero Intro -->
+          <div class="cinema-intro" id="cinema-intro">
+            <div class="availability">
+              <span class="availability-dot"></span>
+              Open to SDE internship opportunities
+            </div>
+            <p class="cinema-role">Full Stack &amp; Distributed Systems</p>
+            <p class="cinema-sub">I build distributed systems <em>you can trust.</em></p>
+            <div class="cinema-cue">
+              <span></span>
+              Scroll
+            </div>
+          </div>
+
+          <!-- Scroll Stages -->
+          <div class="cinema-stage" id="stage-1" style="opacity: 0">
+            <span class="stage-tag">01 · provision</span>
+            <h2>Pods provision on-demand.</h2>
+            <p>Workspaces spin up isolated Kubernetes pods, services, and wildcard subdomains in under 30 seconds. Zero state conflicts.</p>
+          </div>
+
+          <div class="cinema-stage" id="stage-2" style="opacity: 0">
+            <span class="stage-tag">02 · isolation</span>
+            <h2>Multi-tenant containers take the compute.</h2>
+            <p>5-microservice architecture with Socket.IO streamed PTY terminals, live HMR preview, and Redis TTL resource auto-cleanup.</p>
+          </div>
+
+          <div class="cinema-stage" id="stage-3" style="opacity: 0">
+            <span class="stage-tag">03 · orchestrate</span>
+            <h2>LangGraph agents write the code.</h2>
+            <p>Integrated Mistral LLM as an autonomous coding agent with sandboxed file read/write access and live execution feedback.</p>
+          </div>
+
+          <div class="cinema-stage" id="stage-4" style="opacity: 0">
+            <span class="stage-tag">04 · converge</span>
+            <h2>Everything converges. Resilient.</h2>
+            <p>Persistent workspace synchronization across pod restarts, preventing data loss during container failures. This is CloudForge.</p>
+          </div>
+
+          <!-- Right Stage Rail -->
+          <div class="cinema-rail" id="cinema-rail" style="opacity: 0" aria-hidden="true">
+            <div data-stage="0" class="cinema-rail-item"><i></i>provision</div>
+            <div data-stage="1" class="cinema-rail-item"><i></i>isolation</div>
+            <div data-stage="2" class="cinema-rail-item"><i></i>orchestrate</div>
+            <div data-stage="3" class="cinema-rail-item"><i></i>converge</div>
+          </div>
+
+          <!-- Cinema Finale: Interactive Load Console -->
+          <div class="cinema-finale" id="cinema-finale" style="opacity: 0">
+            <div class="finale-copy">
+              <span class="stage-tag">Your turn</span>
+              <h2>Push the cluster<br />until it breaks.</h2>
+              <p>Drag the concurrent sessions. Watch the Kubernetes ingress hold.</p>
+            </div>
+
+            <div class="finale-console">
+              <label for="load-slider">
+                <span>Concurrent Sessions</span>
+                <b id="load-display">520 pods</b>
+              </label>
+              <input id="load-slider" type="range" min="50" max="2000" step="10" value="520" aria-label="Simulated concurrent cluster load" />
+              <div class="finale-stats">
+                <div>
+                  <strong id="stat-throughput">24,580</strong>
+                  <span>req / s</span>
+                </div>
+                <div>
+                  <strong id="stat-provision">24.2 s</strong>
+                  <span>pod spin-up</span>
+                </div>
+                <div>
+                  <strong id="stat-status" class="status-stable">stable</strong>
+                  <span>cluster status</span>
+                </div>
+              </div>
+              <small>Simulated · calibrated to CloudForge &amp; RailSync measured stress tests (500+ concurrent requests, 0 shared-state conflicts).</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proof Strip -->
+      <section class="proof-strip" aria-label="Engineering proof points">
+        <div class="page-shell proof-grid">
+          <div>
+            <strong><span class="counter" data-target="30" data-prefix="&lt; " data-suffix="s">&lt; 30s</span></strong>
+            <span>CloudForge pod provisioning</span>
+          </div>
+          <div>
+            <strong><span class="counter" data-target="500" data-suffix="+">500+</span></strong>
+            <span>concurrent RailSync booking requests</span>
+          </div>
+          <div>
+            <strong><span>0×</span></strong>
+            <span>double-booking via saga locks</span>
+          </div>
+          <div>
+            <strong><span class="counter" data-target="30" data-prefix="&lt; " data-suffix="s">&lt; 30s</span></strong>
+            <span>PagerDuty MTTD via Gemini AI</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Infinite Marquee -->
+      <div class="name-marquee" aria-hidden="true">
+        <div class="name-marquee-track">
+          <div>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Distributed Systems<i>✦</i></span>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Kubernetes<i>✦</i></span>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Event-Driven<i>✦</i></span>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Full Stack<i>✦</i></span>
+          </div>
+          <div>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Distributed Systems<i>✦</i></span>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Kubernetes<i>✦</i></span>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Event-Driven<i>✦</i></span>
+            <span class="is-name">Deepanshu Kuntal<i>✦</i></span>
+            <span>Full Stack<i>✦</i></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Selected Work -->
+      <section class="work-section page-shell" id="work">
+        <div class="reveal section-heading">
+          <div>
+            <span class="section-number">02 / Selected work</span>
+            <h2>Shipped systems<br /><span>with real constraints.</span></h2>
+          </div>
+          <p>Three kinds of engineering evidence: a Kubernetes-native cloud IDE, an event-driven microservices platform, and an AI-powered incident intelligence engine.</p>
+        </div>
+
+        <!-- Flagship Panel: CloudForge -->
+        <div class="reveal titan-panel">
+          <div class="titan-panel-grid">
+            <div>
+              <span class="section-number">Flagship / Kubernetes &amp; Distributed Systems</span>
+              <h3>CloudForge</h3>
+              <p>A Kubernetes-native cloud IDE inspired by CodeSandbox. Dynamically provisions isolated pods, services, and wildcard subdomain ingress via NGINX for each user session, integrating Mistral LLM via LangGraph as an autonomous coding agent.</p>
+              
+              <div class="titan-metrics">
+                <div>
+                  <strong>&lt; 30s</strong>
+                  <span>pod spin-up time</span>
+                </div>
+                <div>
+                  <strong>0</strong>
+                  <span>shared-state conflicts</span>
+                </div>
+                <div>
+                  <strong>5</strong>
+                  <span>microservices in mesh</span>
+                </div>
+              </div>
+
+              <div class="titan-links">
+                <a class="button button-solid" href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+                  Explore CloudForge <span>↗</span>
+                </a>
+                <span>Redis · RabbitMQ · Kubernetes · Docker · NGINX · LangGraph</span>
+              </div>
+            </div>
+
+            <!-- Interactive Terminal Benchmark -->
+            <div class="titan-terminal" aria-label="CloudForge cluster benchmark output">
+              <div class="terminal-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+                <b>cloudforge / cluster-bench</b>
+                <button class="terminal-run-btn" id="run-bench-btn" title="Re-run benchmark">Run bench</button>
+              </div>
+              <div class="terminal-content" id="terminal-screen">
+                <p>$ ./cloudforge_bench --workspaces=500 --verify-isolation</p>
+                <p class="terminal-dim">k8s cluster ............ connected (EKS)</p>
+                <p class="terminal-dim">provisioning pods ...... 500 isolated pods</p>
+                <p class="terminal-dim">ingress routing ........ wildcard *.cloudforge.dev</p>
+                <p class="terminal-accent">provision latency ...... 24.2 s (target &lt;30s)</p>
+                <p class="terminal-accent">shared-state conflicts . 0 (zero cross-tenant leaks)</p>
+                <p class="terminal-dim">workspace sync ......... persistent (GridFS)</p>
+                <p class="terminal-dim">agent loop ............. LangGraph + Mistral active</p>
+                <p class="terminal-accent">status ................. 100% optimal &amp; resilient</p>
+                <p class="terminal-cursor">_</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Projects Grid -->
+        <div class="featured-grid">
+          <!-- Card 1: RailSync -->
+          <div class="reveal">
+            <div class="tilt">
+              <article class="featured-card accent-lime">
+                <div class="featured-card-top">
+                  <span class="project-index">03</span>
+                  <span class="project-eyebrow">Event-driven / Distributed Saga</span>
+                  <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer" aria-label="Open RailSync repository">Repo ↗</a>
+                </div>
+
+                <div class="featured-media">
+                  <img src="/projects/railsync.jpg" alt="RailSync platform interface" loading="lazy" />
+                  <div class="media-overlay">
+                    <span class="live-badge"><i></i>Live demo</span>
+                    <a class="demo-button" href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+                      Open live demo <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="featured-card-body">
+                  <div class="project-title-wrap">
+                    <h3>RailSync</h3>
+                    <span class="project-symbol" aria-hidden="true">⌁</span>
+                  </div>
+                  <p>A full-stack, event-driven train reservation platform using 8 independent microservices (Node.js, Express, PostgreSQL, Prisma) to manage 500+ concurrent booking requests through domain-driven design.</p>
+                  
+                  <div class="project-proof">
+                    <span>↳</span>Saga distributed locks · &lt;100ms compensation rollback
+                  </div>
+
+                  <div class="featured-card-bottom">
+                    <div class="tag-list">
+                      <span>Node.js</span>
+                      <span>Express</span>
+                      <span>Kafka</span>
+                      <span>Elasticsearch</span>
+                      <span>PostgreSQL</span>
+                      <span>Redis</span>
+                      <span>Prisma</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Live demo ↗</a>
+                      <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Source ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Card 2: PagerDuty AI -->
+          <div class="reveal reveal-delay">
+            <div class="tilt">
+              <article class="featured-card accent-blue">
+                <div class="featured-card-top">
+                  <span class="project-index">04</span>
+                  <span class="project-eyebrow">Incident Intelligence / Gemini 2.5 Flash</span>
+                  <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer" aria-label="Open PagerDuty AI repository">Repo ↗</a>
+                </div>
+
+                <div class="featured-media">
+                  <img src="/projects/pagerduty.jpg" alt="PagerDuty AI platform dashboard" loading="lazy" />
+                  <div class="media-overlay">
+                    <span class="live-badge"><i></i>Live demo</span>
+                    <a class="demo-button" href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+                      Open live demo <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="featured-card-body">
+                  <div class="project-title-wrap">
+                    <h3>PagerDuty AI</h3>
+                    <span class="project-symbol" aria-hidden="true">◒</span>
+                  </div>
+                  <p>An AI-powered incident response platform featuring a 6-stage lifecycle engine (OPEN -> CLOSED), 3-role RBAC, Socket.IO live status rooms, and BullMQ worker queue reducing MTTD to under 30 seconds.</p>
+                  
+                  <div class="project-proof">
+                    <span>↳</span>Gemini 2.5 Flash Zod analysis · &lt;30s MTTD reduction
+                  </div>
+
+                  <div class="featured-card-bottom">
+                    <div class="tag-list">
+                      <span>React</span>
+                      <span>Redux Toolkit</span>
+                      <span>BullMQ</span>
+                      <span>Gemini 2.5</span>
+                      <span>Socket.IO</span>
+                      <span>MongoDB</span>
+                      <span>Express</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Live demo ↗</a>
+                      <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Source ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Backend Deep-Dive (Interactive Saga & Distributed Lock Simulator) -->
+        <div class="reveal backend-deep-dive" id="deepdive">
+          <div class="backend-visual">
+            <div class="ledger-demo">
+              <div class="ledger-head">
+                <div>
+                  <span>Available Seats (Train #12952)</span>
+                  <strong id="seat-balance">48 / 50</strong>
+                </div>
+                <label class="ledger-toggle">
+                  <input type="checkbox" id="idempotency-toggle" checked />
+                  <i></i> Redis Distributed Locks ON
+                </label>
+              </div>
+
+              <div class="ledger-actions">
+                <button id="book-seat-btn">Hold &amp; Book Seat</button>
+                <button class="is-ghost" id="simulate-fail-btn">Drop Net + Compensate</button>
+                <button class="is-ghost" id="reset-ledger-btn">Reset</button>
+              </div>
+
+              <div class="ledger-rows" id="saga-log-container" aria-live="polite">
+                <div class="ledger-empty" id="saga-empty-msg">Saga orchestrator log is idle. Click 'Hold &amp; Book Seat' to trigger distributed transaction.</div>
+              </div>
+
+              <div class="ledger-log">
+                <p id="saga-status-text" data-tone="ok">Ready. Redis distributed lock active with optimistic concurrency check.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="backend-copy">
+            <span class="section-number">04 / Backend deep-dive</span>
+            <h3>Distributed Saga Booking Engine</h3>
+            <p>A distributed transaction coordinator handling seat reservation across 8 microservices. Prevents double-booking across 1,000+ simulated holds using Redis distributed locks (TTL expiry + optimistic concurrency) with automatic compensation rollback under 100ms.</p>
+            
+            <div class="backend-principles">
+              <span><b>01</b>Distributed Redis Locks</span>
+              <span><b>02</b>Saga Compensation Rollback</span>
+              <span><b>03</b>Kafka Domain Event Sync</span>
+            </div>
+
+            <div class="backend-footer">
+              <div class="tag-list">
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>Redis</span>
+                <span>PostgreSQL</span>
+                <span>Kafka</span>
+                <span>Elasticsearch</span>
+              </div>
+              <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Open repository ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: 3D Systems Flythrough / Cinema Section -->
+      <section class="cinema rail-fly" id="systems" aria-label="Shipped systems: 3D topology mesh flythrough">
+        <div class="cinema-sticky">
+          <div class="cinema-canvas" id="topology-canvas-container" aria-hidden="true">
+            <canvas id="topology-3d-canvas"></canvas>
+          </div>
+          <div class="cinema-vignette" aria-hidden="true"></div>
+
+          <!-- Product Tabs -->
+          <div class="product-tabs" role="tablist" aria-label="Distributed architectures">
+            <span class="product-tabs-label">Architecture</span>
+            <button role="tab" id="tab-cloudforge" aria-selected="true" class="is-active">
+              <b>01</b>CloudForge K8s Mesh
+            </button>
+            <button role="tab" id="tab-railsync" aria-selected="false">
+              <b>02</b>RailSync Kafka Pipeline
+            </button>
+          </div>
+
+          <div class="cinema-stage" id="topo-stage-1" style="opacity: 0">
+            <span class="stage-tag">01 · topology</span>
+            <h2 id="topo-title">Every container is an isolated pod.</h2>
+            <p id="topo-desc">Dynamic provisioning with NGINX wildcard ingress routing. Workspaces spin up on isolated compute with zero noisy neighbor interference.</p>
+          </div>
+
+          <div class="cinema-stage" id="topo-stage-2" style="opacity: 0">
+            <span class="stage-tag">02 · event streaming</span>
+            <h2>Sub-second event propagation.</h2>
+            <p>Kafka domain events sync booking transactions to Elasticsearch indices in &lt;200ms, decoupling reads from transactional stores.</p>
+          </div>
+
+          <!-- 3D Topology Interactive Controller -->
+          <div class="cinema-finale" id="topo-finale" style="opacity: 0">
+            <div class="finale-copy">
+              <span class="stage-tag">Mesh Telemetry</span>
+              <h2>Inspect the cluster topology in real time.</h2>
+              <div class="rail-links">
+                <a class="button button-solid" href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Explore Architecture <span>↗</span></a>
+                <a class="button button-quiet" href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">Source Code <span>↗</span></a>
+              </div>
+            </div>
+
+            <div class="finale-console">
+              <label for="cluster-slider">
+                <span>Cluster Traffic Rate</span>
+                <b id="cluster-traffic-val">100% nominal</b>
+              </label>
+              <input id="cluster-slider" type="range" min="0" max="1" step="0.01" value="0.5" aria-label="Simulated cluster traffic offset" />
+              <div class="finale-stats">
+                <div>
+                  <strong id="node-active-count">18</strong>
+                  <span>active pods</span>
+                </div>
+                <div>
+                  <strong id="node-latency-count">1.4 ms</strong>
+                  <span>internal latency</span>
+                </div>
+                <div>
+                  <strong id="node-mesh-health">nominal</strong>
+                  <span>mesh health</span>
+                </div>
+              </div>
+              <small>Interactive 3D cluster visualizer. Drag the slider to modulate request particle velocity and service node routing.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Learning Builds & Hackathons -->
+      <section class="learning-section page-shell" id="approach">
+        <div class="reveal section-heading">
+          <div>
+            <span class="section-number">05 / Hackathons &amp; Builds</span>
+            <h2>Not every build<br /><span>needs to be a startup.</span></h2>
+          </div>
+          <p>High-intensity hackathon builds, national competitions, and distributed systems experiments that shaped the engineering foundations.</p>
+        </div>
+
+        <div class="mini-grid">
+          <!-- Build 1: ISRO Hackathon -->
+          <div class="reveal">
+            <article class="mini-card accent-lime">
+              <div class="mini-card-top">
+                <span>National Hackathon / ISRO 2026</span>
+                <span>↗</span>
+              </div>
+              <div class="mini-media">
+                <img src="/projects/isro.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026 platform" loading="lazy" />
+              </div>
+              <h3>ISRO Bharatiya Antariksh Hackathon</h3>
+              <p>Built a real-time satellite telemetry ingestion pipeline and payload analytics dashboard during ISRO's national hackathon, processing high-frequency orbital tracking streams.</p>
+              <div class="mini-card-footer">
+                <div class="tag-list">
+                  <span>Python</span>
+                  <span>WebSockets</span>
+                  <span>Telemetry</span>
+                  <span>Stream Processing</span>
+                </div>
+                <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">View Build ↗</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Build 2: Flipkart GRID -->
+          <div class="reveal reveal-delay">
+            <article class="mini-card accent-blue">
+              <div class="mini-card-top">
+                <span>National Hackathon / Flipkart GRID</span>
+                <span>↗</span>
+              </div>
+              <div class="mini-media">
+                <img src="/projects/flipkart.jpg" alt="Flipkart GRID Supply Chain Engine" loading="lazy" />
+              </div>
+              <h3>Flipkart GRID Supply Chain Engine</h3>
+              <p>Designed a high-throughput automated inventory routing and fulfillment dispatch engine, handling simulated burst order traffic with event-driven state queues.</p>
+              <div class="mini-card-footer">
+                <div class="tag-list">
+                  <span>Node.js</span>
+                  <span>Distributed Queues</span>
+                  <span>BullMQ</span>
+                  <span>Microservices</span>
+                </div>
+                <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">View Build ↗</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Experiments on GitHub -->
+      <section class="experiments-section page-shell">
+        <div class="reveal experiments-row">
+          <div>
+            <span class="section-number">06 / More on GitHub</span>
+            <h2>Other builds<br /><span>worth browsing.</span></h2>
+          </div>
+          <div class="low-weight-list">
+            <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+              <span>Hack-Vega-2.0-Finalist</span>
+              <small>Hackathon / Real-time collaboration platform</small>
+              <b>↗</b>
+            </a>
+            <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+              <span>Coding-Ninjas-x-GDG-Vibe-To-Ship</span>
+              <small>Build Sprint / Full-stack prototype</small>
+              <b>↗</b>
+            </a>
+            <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+              <span>Postman-Regression-Automated-Suites</span>
+              <small>Testing / API automated contract validation</small>
+              <b>↗</b>
+            </a>
+            <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">
+              <span>Distributed-Rate-Limiter-Redis-TokenBucket</span>
+              <small>Systems / Redis sliding window token bucket</small>
+              <b>↗</b>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Working Style & About -->
+      <section class="about-section page-shell" id="about">
+        <div class="reveal">
+          <span class="section-number">07 / Working style</span>
+          <div class="about-coder" role="img" aria-label="Interactive particle animation of developer coding at desk">
+            <div class="about-coder-canvas" id="about-canvas-container">
+              <canvas id="coder-particle-canvas"></canvas>
+            </div>
+            <span class="about-coder-caption">coding · distributed systems</span>
+          </div>
+        </div>
+
+        <div class="reveal about-content">
+          <h2>Correctness is<br /><em>a design choice.</em></h2>
+          <p>I’m a 3rd-year Computer Science undergraduate at Manipal Institute of Technology (MIT Bangalore) specializing in distributed systems and full-stack development. I gravitate toward systems engineering because the most critical parts are often invisible: the distributed lock that prevents a race condition, the saga rollback that prevents double-booking, and the container isolation that keeps tenants secure.</p>
+          
+          <div class="about-facts">
+            <div>
+              <span>Focus</span>
+              <strong>Distributed Systems + Full Stack</strong>
+            </div>
+            <div>
+              <span>Base</span>
+              <strong>Bangalore, India</strong>
+            </div>
+            <div>
+              <span>Education</span>
+              <strong>MIT Bangalore (B.Tech CSE, 2024–2028)</strong>
+            </div>
+            <div>
+              <span>Core Stack</span>
+              <strong>Node.js · TypeScript · React · Kafka · K8s · Redis</strong>
+            </div>
+          </div>
+
+          <div class="skills-chips">
+            <span class="skills-chip-title">Technical Skills:</span>
+            <div class="skills-pills">
+              <span>JavaScript</span>
+              <span>C++</span>
+              <span>Java</span>
+              <span>Python</span>
+              <span>TypeScript</span>
+              <span>SQL</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>LangChain</span>
+              <span>LangGraph</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>RabbitMQ</span>
+              <span>Kafka</span>
+              <span>BullMQ</span>
+              <span>Elasticsearch</span>
+              <span>MongoDB</span>
+              <span>PostgreSQL</span>
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Start a Conversation / Contact -->
+      <section class="contact-section page-shell" id="contact">
+        <div class="reveal contact-card">
+          <div class="contact-name" aria-hidden="true">DEEPANSHU</div>
+          <span class="section-number">08 / Start a conversation</span>
+          <h2>Have a hard problem<br /><em>worth untangling?</em></h2>
+          <p>Tell me what you’re building and where the interesting constraints are.</p>
+          <div class="contact-cta-group">
+            <a class="button button-solid" href="mailto:deepanshukuntal787@gmail.com">
+              Email Deepanshu <span>↗</span>
+            </a>
+            <button class="button button-quiet" id="copy-phone-btn" data-phone="+917483742295">
+              Copy Phone (+91 74837 42295)
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer page-shell">
+      <span>© 2026 Deepanshu Kuntal</span>
+      <span>Built for the parts that fail.</span>
+      <div>
+        <a href="https://github.com/deepanshukuntal" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://linkedin.com/in/deepanshu-kuntal" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="mailto:deepanshukuntal787@gmail.com">Email ↗</a>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
